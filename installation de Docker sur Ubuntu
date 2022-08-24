@@ -1,0 +1,32 @@
+1- mettre à jour le système pour le rendre plus sécurisé et fiable pour l’installation du Docker :
+  - sudo apt update
+  -sudo apt upgrade
+2-Installer les paquets pré-requis
+  -sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
+3-Ajouter les dépôts Docker :
+  1-Ajouter la clé GPG : curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  2- Ajouter le dépot : sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  3-Mettre à jour les infos du depot : sudo apt update
+
+4- installer docker sur Ubuntu : sudo apt install docker-ce
+5-vérifier l’état du service : sudo systemctl status docker
+6-Tester le fonctionnement : sudo docker run hello-world
+7-si nous voulons rechercher des images disponibles, il suffit d’utiliser la commande suivante:
+      sudo docker search [requête_de_recherche]
+      Si nous voulons par exemple cherhcer une image liée à Debian : sudo docker search debian
+8-pour télécharger l’image sur notre ordinateur : sudo docker pull [nom_d_image]
+9- Lister les images : sudo docker images
+10- nous pouvons exécuter notre image en utilisant la commande pull et le ID de l’image:
+    sudo docker run -i -t [image]
+    
+    REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+    debian        latest    dd8bae8d259f   39 hours ago    124MB
+    hello-world   latest    feb5d9fea6a5   11 months ago   13.3kB
+    
+l’option -i rend l’exécution de l’image interactive. Ou l’option -d qui permet de l’exécuter en arrière-plan.
+
+Une fois que nous avons exécuté une image, nous pouvons terminer son exécution en utilisant la combinaison de touches CTRL+D.
+
+si nous voulons utiliser Docker sans privilèges root : sudo usermod -aG docker $(whoami)
+
+Puis, redémarrez le système et les changements seront appliqués
