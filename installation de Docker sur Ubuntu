@@ -30,3 +30,5 @@ Une fois que nous avons exécuté une image, nous pouvons terminer son exécutio
 si nous voulons utiliser Docker sans privilèges root : sudo usermod -aG docker $(whoami)
 
 Puis, redémarrez le système et les changements seront appliqués
+
+images : https://hub.docker.com/
