@@ -57,3 +57,7 @@ docker run -d : executer docker en arriere plan
 vous voulez que le conteneur continue de fonctionner et même interagir avec lui : docker run -it [nom image] bash
 
 verifier le OS sur lequel je suis : cat /etc/*release*
+
+docker run -p 9000:80 nginx : permet de mapper des ports
+      9000 le port de la machine locale
+      80 le port du conteneur
