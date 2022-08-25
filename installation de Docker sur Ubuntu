@@ -35,13 +35,25 @@ images : https://hub.docker.com/
 
 *******************************commandes********************************************
 docker run : executer un container à partir d'une image
+
+docker run redis:4.0 lancer la version 4.0 de redis sinon docker va lancer la version la plus réccente
+
 docker ps : lister tous les container en cours d'execution
+
 docker ps -a : lister tous les container (en cours d'execution + arretés)
+
 docker stop [ nom ou id du container] : arreter un container
+
 docker rm [ nom ou id du container] : supprimer un container
+
 docker images : afficher la listes des images
+
 docker rmi [nom image] supprimer une image ( il faut s'assurer qu'aucun container est en cours d'execution a partir de cette image)
+
 docker exec [nom container] [commande] : executer une commande sur mon container
+
 docker run -d : executer docker en arriere plan
+
 vous voulez que le conteneur continue de fonctionner et même interagir avec lui : docker run -it [nom image] bash
+
 verifier le OS sur lequel je suis : cat /etc/*release*
