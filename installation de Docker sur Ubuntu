@@ -69,5 +69,9 @@ on doit mapper un repertoire à l'exterieur du conteneur et un repertoire à l'i
 
 Docker run -v /opt/datadir:/var/lib/mysql mysql
              [repertoire ext]:[repertoire int]
-             
+gedit dockerfile : créer le fichier dokerfile
+docker build . -f dockerfile -t sbendok/sbendok/application-simple-flask : créer l'image Docker à partir de Dockerfile
+docker history sbendok/sbendok/application-simple-flask : pusher l'image
+docker build . : voir les differente etape et le resultat de chaque tache
+
 
