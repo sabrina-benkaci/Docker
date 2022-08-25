@@ -40,6 +40,8 @@ docker run redis:4.0 lancer la version 4.0 de redis sinon docker va lancer la ve
 
 docker ps : lister tous les container en cours d'execution
 
+docker inspect [ nom ou id du container] : obtenir les details sur le conteneur
+
 docker ps -a : lister tous les container (en cours d'execution + arretés)
 
 docker stop [ nom ou id du container] : arreter un container
@@ -61,3 +63,11 @@ verifier le OS sur lequel je suis : cat /etc/*release*
 docker run -p 9000:80 nginx : permet de mapper des ports
       9000 le port de la machine locale
       80 le port du conteneur
+      
+Mappage de volume : pour eviter la perte de donnée si nous supprimons un conteneur ,
+on doit mapper un repertoire à l'exterieur du conteneur et un repertoire à l'interieur du conteneur
+
+Docker run -v /opt/datadir:/var/lib/mysql mysql
+             [repertoire ext]:[repertoire int]
+             
+
